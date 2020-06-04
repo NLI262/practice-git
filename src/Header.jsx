@@ -2,7 +2,7 @@ import React from "react"
 const Header=()=>
 {
     return(<div>
- Header
+ Headers
     </div>)
 }
 export default Header
