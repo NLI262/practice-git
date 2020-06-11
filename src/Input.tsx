@@ -11,16 +11,18 @@ interface Props {
     i?: number;
     fn?: (bob: string) => void;
     person?: Person;
-    handleChange: (event: React.ChangeEvent<HTMLInputElement>)=> any;
+    handleChange: (event: React.ChangeEvent<HTMLInputElement>) => any;
+    returnJSX: (id: number, message: string) => JSX.Element;
+
 }
 
 
-export const TextField: React.FC<Props> = ({ text, handleChange }) => {
+export const TextField: React.FC<Props> = ({ text, handleChange, returnJSX }) => {
 
     return (
         <div >
             <input value={text} onChange={handleChange} />
-           
+            {returnJSX(23, "typescript  is")}
         </div>
     );
 };

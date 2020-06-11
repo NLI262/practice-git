@@ -7,11 +7,11 @@ import { TextField } from "./Input"
 interface Dash {
     projectName: string;
     projects: Array<any>
+   // returnJSX: (id: number, message: string, ping: string) => JSX.Element;
+
+
 }
-let detail = {
-    firstName: "harsha",
-    lastName: "Vishnuvajhala"
-}
+
 interface StateforDashboard {
     value: string,
     list: Array<string>
@@ -37,17 +37,22 @@ export default class Dashboard extends React.Component<Dash, StateforDashboard>{
         })
 
     }
+    returnJSX = (id: number, message: string) => {
+        return <div><h1>{id}, {message} </h1></div>
+    }
     render() {
 
         return (<div>
             <Header />
-            <TextField text={this.state.value} handleChange={this.handleChange}/>
+            <TextField text={this.state.value} handleChange={this.handleChange} returnJSX={this.returnJSX} />
+
             <input value={this.state.value} onChange={this.handleChange} />
             <Button onClick={this.handleSubmit} text="add new button" />
             <li>
                 {this.state.list}
-                {console.log(this.state.list)}
             </li>
+           
+
 
         </div>)
     }
