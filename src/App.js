@@ -1,14 +1,13 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
-import Button from './Button';
-import Header from './Header';
+import Dashboard from './Dashboard';
 
 function App() {
+  // const [variable, setVarriable] =useState('')
+
   return (
     <div className="App">
-      <Header/>
-    <Button text="me"/>
+      <Dashboard/>
     </div>
   );
 }
